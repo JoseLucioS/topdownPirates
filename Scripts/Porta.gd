@@ -17,3 +17,4 @@ func _input(event):
 			$Corpo/AnimationPlayer.play("horizontal_vertical")
 		else:
 			$Corpo/AnimationPlayer.play("vertical_horizontal")
+		$Luz.enabled = true

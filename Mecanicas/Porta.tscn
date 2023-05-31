@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Texturas/superfície-de-ressonância-com-fundo-textura-madeira-da-vintage-para-projeto-224453041.jpg" type="Texture" id=1]
 [ext_resource path="res://Scripts/Porta.gd" type="Script" id=2]
+[ext_resource path="res://Mecanicas/Luz.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 89.5, 19 )
@@ -86,6 +87,9 @@ reset_on_save = false
 anims/RESET = SubResource( 3 )
 anims/horizontal_vertical = SubResource( 4 )
 anims/vertical_horizontal = SubResource( 5 )
+
+[node name="Luz" parent="." instance=ExtResource( 3 )]
+enabled = false
 
 [connection signal="body_entered" from="Corpo/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Corpo/Area2D" to="." method="_on_Area2D_body_exited"]
