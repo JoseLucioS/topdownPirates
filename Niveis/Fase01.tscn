@@ -9,7 +9,7 @@
 [node name="Arquitetura" type="TileMap" parent="Tilemaps" index="0"]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
-collision_layer = 3
+collision_layer = 2
 collision_mask = 9
 bake_navigation = true
 format = 1
@@ -25,3 +25,7 @@ tile_data = PoolIntArray( -3866557, 1, 131072, -3866556, 1, 131072, -2817991, 1,
 [node name="Navio" type="Sprite" parent="Objetivos" index="0"]
 position = Vector2( 2896, -508 )
 texture = ExtResource( 3 )
+
+[node name="Jogador" parent="." index="2"]
+position = Vector2( 185, 391 )
+z_index = 1
