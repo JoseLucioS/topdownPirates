@@ -8,4 +8,6 @@
 
 [node name="Objetivos" type="Node" parent="."]
 
+[node name="Portas" type="Node" parent="."]
+
 [node name="Jogador" parent="." instance=ExtResource( 1 )]
