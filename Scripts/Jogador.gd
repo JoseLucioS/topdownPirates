@@ -1,8 +1,13 @@
 extends KinematicBody2D
 
+#atributos de movimentacao
 var direcao = Vector2(0, 0)
 export var velocidade = 100
 var frente
+
+#atributos de estado
+var dano
+var espada = false
 
 func _physics_process(delta):
 	definir_movimento()
@@ -32,4 +37,7 @@ func definir_animacao():
 		#$AnimatedSprite.play("idle")
 		$AnimatedSprite.stop()
 	else:
-		$AnimatedSprite.play("andar" + frente)
+		if espada:
+			$AnimatedSprite.play("espada" + frente)
+		else:
+			$AnimatedSprite.play("andar" + frente)
