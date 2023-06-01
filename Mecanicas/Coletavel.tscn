@@ -3,6 +3,7 @@
 [ext_resource path="res://Scripts/Coletavel.gd" type="Script" id=1]
 
 [node name="Coletavel" type="Area2D"]
+collision_layer = 4
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
