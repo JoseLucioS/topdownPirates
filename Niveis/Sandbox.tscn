@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Niveis/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/Arquitetura.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Mecanicas/Luz.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Mecanicas/Espada.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Personagens/Novo_Jogador.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Personagens/Marujo.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -90,13 +91,32 @@ anims/vertical_horizontal = SubResource( 3 )
 position = Vector2( 176.5, 27 )
 scale = Vector2( 6.85937, 8.25 )
 
-[node name="CanvasModulate" parent="Luzes" index="0"]
-color = Color( 0.0666667, 0.0627451, 0.0627451, 1 )
+[node name="Marujo" parent="Inimigos" index="0" instance=ExtResource( 7 )]
+position = Vector2( 250, 85 )
+z_index = 1
+velocidade = 100
 
-[node name="Light2D" parent="Luzes" index="1" instance=ExtResource( 4 )]
+[node name="NavigationAgent2D" parent="Inimigos/Marujo" index="5"]
+avoidance_enabled = false
+radius = 10.0
+
+[node name="Position2D" type="Position2D" parent="Inimigos/Marujo/Locais" index="0"]
+position = Vector2( 323, -83 )
+
+[node name="Position2D2" type="Position2D" parent="Inimigos/Marujo/Locais" index="1"]
+position = Vector2( 450, 195 )
+
+[node name="Position2D3" type="Position2D" parent="Inimigos/Marujo/Locais" index="2"]
+position = Vector2( 307, 314 )
+
+[node name="Position2D4" type="Position2D" parent="Inimigos/Marujo/Locais" index="3"]
+position = Vector2( 46, 235 )
 
 [node name="Jogador" parent="." index="4" instance=ExtResource( 6 )]
 z_index = 1
 
+[node name="Light2D" parent="Luzes" index="1" instance=ExtResource( 4 )]
+
 [editable path="Portas/Porta"]
 [editable path="Portas/Porta2"]
+[editable path="Inimigos/Marujo"]

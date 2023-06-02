@@ -486,11 +486,6 @@ color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
 position = Vector2( 306.5, 498.5 )
 scale = Vector2( 13.4531, 14.0469 )
 
-[node name="Jogador" parent="." index="4"]
-position = Vector2( 185, 391 )
-z_index = 1
-velocidade = 300
-
 [editable path="Portas/Porta"]
 [editable path="Portas/Porta2"]
 [editable path="Portas/Porta3"]

@@ -8,6 +8,8 @@
 
 [node name="Portas" type="Node" parent="."]
 
+[node name="Inimigos" type="Node" parent="."]
+
 [node name="Luzes" type="Node" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Luzes"]
