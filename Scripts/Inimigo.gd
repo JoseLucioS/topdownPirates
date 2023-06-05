@@ -4,6 +4,7 @@ extends "res://Scripts/Personagem.gd"
 # 0 - patrulha
 # 1 - perseguição
 var status
+var player
 
 #variaveis para movimento
 var destino
@@ -27,3 +28,13 @@ func _on_Visao_body_exited(body):
 	if body.collision_layer == 1:
 		status = 0
 		$NavigationAgent2D.set_target_location(body.position)
+
+
+func _on_AtaqueArea_body_entered(body):
+	if body.collision_layer == 1:
+		set_physics_process(false)
+		player = body
+		$AnimationPlayer.play("ataque" + frente)
+
+func atacar():
+	pass

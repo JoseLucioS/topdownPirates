@@ -21,3 +21,5 @@ radius = 15.0
 [node name="Timer" type="Timer" parent="." index="7"]
 wait_time = 2.0
 one_shot = true
+
+[connection signal="body_entered" from="AtaqueArea" to="." method="_on_AtaqueArea_body_entered"]

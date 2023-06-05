@@ -4,6 +4,7 @@
 
 [node name="Personagem" type="KinematicBody2D"]
 script = ExtResource( 1 )
+knockback = 50
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 

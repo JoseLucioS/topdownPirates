@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Personagens/Inimigo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Marujo.gd" type="Script" id=2]
@@ -164,6 +164,36 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 512, 576, 64, 64 )
 
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 64, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 128, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 192, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 256, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 320, 1280, 64, 64 )
+
 [sub_resource type="SpriteFrames" id=33]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
@@ -185,6 +215,11 @@ animations = [ {
 "loop": true,
 "name": "andar_esquerda",
 "speed": 10.0
+}, {
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ) ],
+"loop": true,
+"name": "morrer",
+"speed": 6.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=34]
@@ -367,15 +402,59 @@ tracks/2/keys = {
 "values": [ 90.0 ]
 }
 
+[sub_resource type="Animation" id=46]
+resource_name = "morrer"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "morrer" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "morrer"
+} ]
+}
+
 [node name="Marujo" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-velocidade = 150
+velocidade = 100
 HP = 10
 dano = 4
+vel_normal = 100
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 33 )
-animation = "andar_baixo"
+animation = "morrer"
+frame = 5
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, 14 )
@@ -387,6 +466,7 @@ anims/andar_baixo = SubResource( 36 )
 anims/andar_cima = SubResource( 37 )
 anims/andar_direita = SubResource( 38 )
 anims/andar_esquerda = SubResource( 39 )
+anims/morrer = SubResource( 46 )
 
 [node name="CollisionPolygon2D" parent="Visao" index="0"]
 polygon = PoolVector2Array( 0, 0, -54, 20, -87, 163, 2, 184, 92, 163, 57, 17 )

@@ -22,6 +22,9 @@ func definir_movimento():
 	else:
 		caminhar()
 
+func morrer():
+	queue_free()
+
 func caminhar():
 	var alvo = $NavigationAgent2D.get_next_location()
 	
