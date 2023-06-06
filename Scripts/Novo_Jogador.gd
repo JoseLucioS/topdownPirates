@@ -6,6 +6,12 @@ var espada = false
 func _ready():
 	velocidade = vel_normal
 
+func _process(delta):
+	atualizar_hud()
+
+func atualizar_hud():
+	get_tree().call_group("HUD", "atualizar_vida", HP)
+
 func _input(event):
 	if Input.is_action_just_pressed("ataque") and espada:
 		$AnimationPlayer.play("ataque" + frente)

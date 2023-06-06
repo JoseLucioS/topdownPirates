@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GUI/HUD.tscn" type="PackedScene" id=1]
 
 [node name="LevelTemplate" type="Node2D"]
 
@@ -13,3 +15,5 @@
 [node name="Luzes" type="Node" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Luzes"]
+
+[node name="HUD" parent="." instance=ExtResource( 1 )]
