@@ -4,7 +4,7 @@ extends "res://Scripts/Personagem.gd"
 # 0 - patrulha
 # 1 - perseguição
 var status
-var player
+onready var player = get_node("/root").find_node("Jogador", true, false)
 
 #variaveis para movimento
 var destino
@@ -37,4 +37,11 @@ func _on_AtaqueArea_body_entered(body):
 		$AnimationPlayer.play("ataque" + frente)
 
 func atacar():
-	pass
+	player.recebeu_ataque(dano, frente)
+	$Timer.start(1)
+
+func pos_ataque():
+	$NavigationAgent2D.set_target_location(player.position)
+	status = 1
+	set_physics_process(false)
+	$Timer.start(1)

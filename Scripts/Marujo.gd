@@ -11,7 +11,7 @@ func escolha_destino():
 		if status == 0:
 			destino = opcoes[randi() % opcoes.size()]
 		elif status == 1:
-			destino = get_node("/root").find_node("Jogador", true, false)
+			destino = player #get_node("/root").find_node("Jogador", true, false)
 		$NavigationAgent2D.set_target_location(destino.position)
 
 func definir_movimento():
