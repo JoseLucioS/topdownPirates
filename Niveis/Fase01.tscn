@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Niveis/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/Arquitetura.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Mecanicas/Luz.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Mecanicas/Porta.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Mecanicas/Espada.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Personagens/Novo_Jogador.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -485,6 +486,10 @@ color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
 [node name="Luz" parent="Luzes" index="1" instance=ExtResource( 4 )]
 position = Vector2( 306.5, 498.5 )
 scale = Vector2( 13.4531, 14.0469 )
+
+[node name="Jogador" parent="." index="6" instance=ExtResource( 7 )]
+position = Vector2( 198, 381 )
+z_index = 1
 
 [editable path="Portas/Porta"]
 [editable path="Portas/Porta2"]

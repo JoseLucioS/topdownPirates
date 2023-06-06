@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="TopDown Pirates"
-run/main_scene="res://Niveis/Fase01.tscn"
+run/main_scene="res://GUI/Titulo.tscn"
 config/icon="res://icon.png"
 
 [gui]
