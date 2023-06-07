@@ -9,7 +9,7 @@ extents = Vector2( 15, 16 )
 
 [node name="Espada" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-dano = 3
+dano = 5
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )

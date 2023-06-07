@@ -1,9 +1,10 @@
-[gd_scene load_steps=106 format=2]
+[gd_scene load_steps=107 format=2]
 
 [ext_resource path="res://Personagens/Personagem.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Novo_Jogador.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Personagens/Jogador/Player (no weapon).png" type="Texture" id=3]
 [ext_resource path="res://Assets/Personagens/Jogador/Player (sword).png" type="Texture" id=4]
+[ext_resource path="res://Assets/SFX/Socapex - Swordsmall_1.wav" type="AudioStream" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -638,6 +639,20 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( 4, 2 ) ]
 }
+tracks/5/type = "audio"
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0.4 )
+}
 
 [sub_resource type="Animation" id=97]
 resource_name = "ataque_cima"
@@ -701,6 +716,20 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 4, 2 ) ]
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0.4 )
 }
 
 [sub_resource type="Animation" id=98]
@@ -766,6 +795,20 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( 4, 2 ), Vector2( 2, 1 ) ]
 }
+tracks/5/type = "audio"
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0.4 )
+}
 
 [sub_resource type="Animation" id=100]
 resource_name = "ataque_esquerda"
@@ -830,6 +873,20 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( 4, 2 ), Vector2( 2, 1 ) ]
 }
+tracks/5/type = "audio"
+tracks/5/path = NodePath("AudioStreamPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0.4 )
+}
 
 [sub_resource type="Animation" id=101]
 resource_name = "morrer"
@@ -880,7 +937,7 @@ collision_mask = 14
 script = ExtResource( 2 )
 velocidade = 120
 HP = 20
-dano = 4
+dano = 5
 vel_normal = 120
 vel_corrida = 140
 HP_Max = 20
@@ -911,6 +968,10 @@ disabled = true
 [node name="Camera2D" type="Camera2D" parent="." index="4"]
 current = true
 zoom = Vector2( 0.7, 0.7 )
+
+[node name="AudioStreamPlayer" parent="." index="5"]
+stream = ExtResource( 5 )
+volume_db = -10.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="AtaqueArea" to="." method="_on_AtaqueArea_body_entered"]

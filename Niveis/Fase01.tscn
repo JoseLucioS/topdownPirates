@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Niveis/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/Arquitetura.tres" type="TileSet" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://Mecanicas/Luz.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Mecanicas/Porta.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Mecanicas/Espada.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Personagens/Novo_Jogador.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Musicas/Pirate orchestra.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Personagens/Marujo.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/SFX/Sea sounds - VistulaShort.mp3" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -488,8 +489,34 @@ position = Vector2( 409, -65 )
 position = Vector2( 306.5, 498.5 )
 scale = Vector2( 13.4531, 14.0469 )
 
-[node name="Jogador" parent="." index="6" instance=ExtResource( 7 )]
-position = Vector2( 198, 381 )
+[node name="Tema" parent="Sons" index="0"]
+stream = ExtResource( 7 )
+volume_db = -20.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sons" index="1"]
+position = Vector2( 1167, -729 )
+stream = ExtResource( 9 )
+volume_db = -10.0
+autoplay = true
+max_distance = 500.0
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="Sons" index="2"]
+position = Vector2( 1167, 44 )
+stream = ExtResource( 9 )
+volume_db = -10.0
+autoplay = true
+max_distance = 500.0
+
+[node name="AudioStreamPlayer2D5" type="AudioStreamPlayer2D" parent="Sons" index="3"]
+position = Vector2( 2720, -276 )
+stream = ExtResource( 9 )
+volume_db = -10.0
+autoplay = true
+max_distance = 500.0
+
+[node name="Jogador" parent="." index="7"]
+position = Vector2( 207, 413 )
 z_index = 1
 
 [editable path="Portas/Porta"]

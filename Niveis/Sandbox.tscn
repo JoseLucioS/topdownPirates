@@ -1,59 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Niveis/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/Arquitetura.tres" type="TileSet" id=2]
 [ext_resource path="res://Mecanicas/Porta.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mecanicas/Luz.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Mecanicas/Espada.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Personagens/Novo_Jogador.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Personagens/Marujo.tscn" type="PackedScene" id=7]
-
-[sub_resource type="Animation" id=1]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "horizontal_vertical"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 90.0 ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "vertical_horizontal"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.001, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 90.0, 90.0, 0.0 ]
-}
 
 [node name="Sandbox" instance=ExtResource( 1 )]
 
@@ -77,19 +29,8 @@ position = Vector2( 41.5, 85 )
 scale = Vector2( 5.67188, 3.40625 )
 
 [node name="Porta2" parent="Portas" index="1" instance=ExtResource( 3 )]
-position = Vector2( 105, 79 )
-
-[node name="Corpo" parent="Portas/Porta2" index="0"]
-rotation = 1.5708
-
-[node name="AnimationPlayer" parent="Portas/Porta2/Corpo" index="3"]
-anims/RESET = SubResource( 1 )
-anims/horizontal_vertical = SubResource( 2 )
-anims/vertical_horizontal = SubResource( 3 )
-
-[node name="Luz" parent="Portas/Porta2" index="1"]
-position = Vector2( 176.5, 27 )
-scale = Vector2( 6.85937, 8.25 )
+position = Vector2( 86, 147 )
+rotation = 4.71239
 
 [node name="Marujo" parent="Inimigos" index="0" instance=ExtResource( 7 )]
 position = Vector2( 250, 85 )
@@ -114,12 +55,12 @@ position = Vector2( 307, 314 )
 [node name="Position2D4" type="Position2D" parent="Inimigos/Marujo/Locais" index="3"]
 position = Vector2( 46, 235 )
 
-[node name="Jogador" parent="." index="4" instance=ExtResource( 6 )]
-z_index = 1
-
 [node name="Light2D" parent="Luzes" index="1" instance=ExtResource( 4 )]
+
+[node name="Jogador" parent="." index="7"]
+position = Vector2( -60, 29 )
+z_index = 1
 
 [editable path="Portas/Porta"]
 [editable path="Portas/Porta2"]
 [editable path="Inimigos/Marujo"]
-[editable path="Jogador"]

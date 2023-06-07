@@ -1,8 +1,9 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Personagens/Inimigo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Marujo.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Personagens/Inimigos/Marujo (Inimigo 01).png" type="Texture" id=3]
+[ext_resource path="res://Assets/SFX/Socapex - slow squish.wav" type="AudioStream" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -643,6 +644,20 @@ tracks/2/keys = {
 "method": "atacar"
 } ]
 }
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=71]
 resource_name = "ataque_cima"
@@ -684,6 +699,20 @@ tracks/2/keys = {
 "args": [  ],
 "method": "atacar"
 } ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=73]
@@ -727,6 +756,20 @@ tracks/2/keys = {
 "method": "atacar"
 } ]
 }
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=74]
 resource_name = "ataque_esquerda"
@@ -768,6 +811,20 @@ tracks/2/keys = {
 "args": [  ],
 "method": "atacar"
 } ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=46]
@@ -824,7 +881,7 @@ vel_normal = 100
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 33 )
-animation = "ataque_direita"
+animation = "ataque_esquerda"
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, 14 )
@@ -848,6 +905,10 @@ shape = SubResource( 75 )
 
 [node name="CollisionPolygon2D" parent="Visao" index="0"]
 polygon = PoolVector2Array( 0, 0, -54, 20, -87, 163, 2, 184, 92, 163, 57, 17 )
+
+[node name="AudioStreamPlayer" parent="." index="8"]
+stream = ExtResource( 4 )
+volume_db = -10.0
 
 [connection signal="body_entered" from="Visao" to="." method="_on_Visao_body_entered"]
 [connection signal="body_exited" from="Visao" to="." method="_on_Visao_body_exited"]
