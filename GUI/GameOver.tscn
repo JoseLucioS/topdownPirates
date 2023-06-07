@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://GUI/Tema_jogo.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Personagens/Jogador/Player (no weapon).png" type="Texture" id=2]
+[ext_resource path="res://Scripts/GameOver.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Musicas/loop-pirates-ahoy-01.ogg" type="AudioStream" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 128, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 192, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 256, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 320, 1280, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 320, 1280, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 6 ) ],
+"loop": true,
+"name": "morte",
+"speed": 8.0
+} ]
+
+[node name="GameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="BG" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0509804, 0.0470588, 0.0470588, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 262.0
+margin_top = 169.0
+margin_right = 762.0
+margin_bottom = 430.0
+custom_constants/separation = 100
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 500.0
+margin_bottom = 99.0
+rect_min_size = Vector2( 500, 0 )
+text = "Isto eh dark sou... Digo, voce morreu..."
+autowrap = true
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 199.0
+margin_right = 500.0
+margin_bottom = 261.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
+margin_left = 116.0
+margin_right = 384.0
+margin_bottom = 62.0
+alignment = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+position = Vector2( -87, 23 )
+scale = Vector2( 1.42188, 1.32813 )
+frames = SubResource( 5 )
+animation = "morte"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+margin_right = 268.0
+margin_bottom = 62.0
+
+[node name="Continuar" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer"]
+margin_right = 268.0
+margin_bottom = 29.0
+text = "Tentar novamente?"
+
+[node name="Sair" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer"]
+margin_top = 33.0
+margin_right = 268.0
+margin_bottom = 62.0
+text = "Sair"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+autoplay = true
+
+[connection signal="animation_finished" from="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/Continuar" to="." method="_on_Continuar_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/VBoxContainer/Sair" to="." method="_on_Sair_pressed"]

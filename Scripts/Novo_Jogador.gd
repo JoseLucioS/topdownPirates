@@ -34,7 +34,7 @@ func definir_animacao():
 			$AnimatedSprite.play("andar" + frente)
 
 func morrer():
-	get_tree().quit()
+	get_tree().change_scene("res://GUI/GameOver.tscn")
 
 func _on_AtaqueArea_body_entered(body):
 	if body.collision_layer == 8: # 8 é o valor numerico da camada dos inimigos
