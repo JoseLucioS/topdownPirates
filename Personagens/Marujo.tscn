@@ -443,7 +443,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 20 ) ]
+"values": [ Vector2( 0, 16 ) ]
 }
 
 [sub_resource type="Animation" id=37]
@@ -495,7 +495,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -15 ) ]
+"values": [ Vector2( 0, -8 ) ]
 }
 
 [sub_resource type="Animation" id=38]
@@ -881,7 +881,7 @@ vel_normal = 100
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 33 )
-animation = "ataque_esquerda"
+animation = "andar_baixo"
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, 14 )
@@ -908,7 +908,7 @@ polygon = PoolVector2Array( 0, 0, -54, 20, -87, 163, 2, 184, 92, 163, 57, 17 )
 
 [node name="AudioStreamPlayer" parent="." index="8"]
 stream = ExtResource( 4 )
-volume_db = -10.0
+volume_db = 4.0
 
 [connection signal="body_entered" from="Visao" to="." method="_on_Visao_body_entered"]
 [connection signal="body_exited" from="Visao" to="." method="_on_Visao_body_exited"]

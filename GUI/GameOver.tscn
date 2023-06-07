@@ -101,7 +101,7 @@ text = "Sair"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -20.0
+volume_db = 8.0
 autoplay = true
 
 [connection signal="animation_finished" from="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
