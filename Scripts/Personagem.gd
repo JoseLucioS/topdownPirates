@@ -17,8 +17,6 @@ func _physics_process(delta):
 
 func recebeu_ataque(dano, dir):
 	HP -= dano
-	print("dano:", dano)
-	print("hp:", HP)
 	if HP <= 0:
 		$AnimationPlayer.play("morrer")
 		set_physics_process(false)

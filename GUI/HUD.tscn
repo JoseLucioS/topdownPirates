@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Props/Transperent/heart.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Props/health_potion.png" type="Texture" id=3]
+[ext_resource path="res://GUI/Tema_jogo.tres" type="Theme" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0313726, 0.419608, 0.215686, 1 )
@@ -10,6 +12,8 @@ bg_color = Color( 0.0313726, 0.419608, 0.215686, 1 )
 bg_color = Color( 0.47451, 0.027451, 0.027451, 1 )
 
 [sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [node name="HUD" type="CanvasLayer" groups=["HUD"]]
 script = ExtResource( 1 )
@@ -40,3 +44,12 @@ custom_styles/bg = SubResource( 3 )
 items = [ "", ExtResource( 2 ), false ]
 auto_height = true
 max_columns = 10
+
+[node name="ItemList" type="ItemList" parent="Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -65.0
+margin_right = 131.0
+theme = ExtResource( 4 )
+custom_styles/bg = SubResource( 4 )
+items = [ "x 0", ExtResource( 3 ), true ]
