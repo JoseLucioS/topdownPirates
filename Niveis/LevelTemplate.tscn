@@ -9,6 +9,8 @@
 
 [node name="Objetivos" type="Node" parent="."]
 
+[node name="Coletaveis" type="Node" parent="."]
+
 [node name="Portas" type="Node" parent="."]
 
 [node name="Inimigos" type="Node" parent="."]

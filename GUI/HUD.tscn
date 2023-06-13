@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Props/Transperent/heart.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Props/health_potion.png" type="Texture" id=3]
 [ext_resource path="res://GUI/Tema_jogo.tres" type="Theme" id=4]
+[ext_resource path="res://Assets/Props/Ouro/ouro10.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0313726, 0.419608, 0.215686, 1 )
@@ -52,4 +53,4 @@ margin_top = -65.0
 margin_right = 131.0
 theme = ExtResource( 4 )
 custom_styles/bg = SubResource( 4 )
-items = [ "x 0", ExtResource( 3 ), true ]
+items = [ "X 0", ExtResource( 3 ), true, "X 0", ExtResource( 5 ), true ]

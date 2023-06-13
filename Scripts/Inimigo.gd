@@ -45,3 +45,10 @@ func pos_ataque():
 	status = 1
 	set_physics_process(false)
 	$Timer.start(1)
+
+func gerar_loot():
+	var ouro = preload("res://Mecanicas/Ouro.tscn")
+	var loot = ouro.instance()
+	var objetos = get_node("/root").find_node("Coletaveis", true, false)
+	loot.position = position
+	objetos.add_child(loot)

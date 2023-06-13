@@ -3,6 +3,7 @@ extends "res://Scripts/Personagem.gd"
 export var HP_Max : int
 var arma = false
 var pocao = 0
+var ouro = 0
 var inventario = []
 
 func _ready():
@@ -12,7 +13,7 @@ func _process(delta):
 	atualizar_hud()
 
 func atualizar_hud():
-	get_tree().call_group("HUD", "atualizar_dados", HP, pocao)
+	get_tree().call_group("HUD", "atualizar_dados", HP, pocao, ouro)
 
 func _input(event):
 	if Input.is_action_just_pressed("ataque") and arma:
