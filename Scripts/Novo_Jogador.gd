@@ -35,7 +35,7 @@ func definir_movimento():
 
 func receber_item(item):
 	if item.usavel:
-		#inventario.append(item)
+		inventario.append(item)
 		if item.nome == "pocaoHP":
 			pocao += 1
 		pass
