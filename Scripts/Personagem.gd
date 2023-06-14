@@ -27,14 +27,24 @@ func recebeu_ataque(dano, dir):
 func empurrar_tras(dir):
 	$AudioStreamPlayer.stream = load("res://Assets/SFX/Socapex - new_hits_2.wav")
 	$AudioStreamPlayer.play()
+	
+	var nova_posicao = position
+	
+	
 	if dir == "_cima":
-		position.y -= knockback
+		nova_posicao.y -= knockback
 	elif dir == "_baixo":
-		position.y += knockback
+		nova_posicao.y += knockback
 	elif dir == "_direita":
-		position.x += knockback
+		nova_posicao.x += knockback
 	elif dir == "_esquerda":
-		position.x -= knockback
+		nova_posicao.x -= knockback
+	
+	#var tween = create_tween()
+	#tween.tween_property(self, "position", nova_posicao, 0.5)
+	var movimento = nova_posicao - position
+	move_and_slide(movimento * knockback)
+	
 
 func definir_movimento():
 	pass

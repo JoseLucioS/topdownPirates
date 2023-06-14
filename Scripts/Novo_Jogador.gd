@@ -26,6 +26,12 @@ func _input(event):
 			HP = HP_Max
 		
 		pocao -= 1
+		
+		for i in inventario:
+			if i.nome == "pocaoHP":
+				inventario.erase(i)
+				break
+
 
 func definir_movimento():
 	direcao.x = Input.get_axis("esquerda", "direita")
@@ -38,11 +44,9 @@ func receber_item(item):
 		inventario.append(item)
 		if item.nome == "pocaoHP":
 			pocao += 1
-		pass
 	else:
 		dano = item.atributo
 		arma = item
-	pass
 
 func definir_animacao():
 	if direcao.x == 0 and direcao.y == 0:
