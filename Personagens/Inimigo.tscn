@@ -23,3 +23,5 @@ wait_time = 2.0
 one_shot = true
 
 [connection signal="body_entered" from="AtaqueArea" to="." method="_on_AtaqueArea_body_entered"]
+[connection signal="body_entered" from="Visao" to="." method="_on_Visao_body_entered"]
+[connection signal="body_exited" from="Visao" to="." method="_on_Visao_body_exited"]
