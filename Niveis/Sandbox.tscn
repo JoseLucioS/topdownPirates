@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Niveis/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/Arquitetura.tres" type="TileSet" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Personagens/Sentinela.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Mecanicas/Ouro.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Mecanicas/Espinhos.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Mecanicas/Chave.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Mecanicas/PortaFechada.tscn" type="PackedScene" id=11]
 
 [node name="Sandbox" instance=ExtResource( 1 )]
 
@@ -49,6 +51,10 @@ position = Vector2( 407, 250 )
 [node name="Ouro4" parent="Coletaveis/Dinheiro" index="3" instance=ExtResource( 8 )]
 position = Vector2( 81, 297 )
 
+[node name="Chave" parent="Coletaveis" index="3" instance=ExtResource( 10 )]
+position = Vector2( -92, -77 )
+atributo = 10
+
 [node name="Porta" parent="Portas" index="0" instance=ExtResource( 3 )]
 position = Vector2( -36, 155 )
 
@@ -59,6 +65,10 @@ scale = Vector2( 5.67188, 3.40625 )
 [node name="Porta2" parent="Portas" index="1" instance=ExtResource( 3 )]
 position = Vector2( 86, 147 )
 rotation = 4.71239
+
+[node name="PortaFechada" parent="Portas" index="2" instance=ExtResource( 11 )]
+position = Vector2( -5, -84 )
+id = 10
 
 [node name="Sentinela" parent="Inimigos" index="0" instance=ExtResource( 7 )]
 position = Vector2( 341, -92 )
