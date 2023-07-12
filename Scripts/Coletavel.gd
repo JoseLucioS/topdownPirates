@@ -13,3 +13,6 @@ func _on_Coletavel_body_entered(body):
 func atualizar_dados(body):
 	var item = {"usavel": usavel, "nome": nome, "atributo": atributo, "valor": valor, "imagem": $Sprite.texture.load_path}
 	body.receber_item(item)
+
+func adicionar_loot(body):
+	emit_signal("body_entered", body)

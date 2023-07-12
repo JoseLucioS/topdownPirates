@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/Musicas/Pirate orchestra.mp3" type="AudioStream" id=7]
 [ext_resource path="res://Personagens/Marujo.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/SFX/Sea sounds - VistulaShort.mp3" type="AudioStream" id=9]
-[ext_resource path="res://Mecanicas/PocaoHP.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Mecanicas/Loot/PocaoHP.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scripts/Fase01.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]

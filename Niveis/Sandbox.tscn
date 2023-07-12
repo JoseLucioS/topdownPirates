@@ -1,16 +1,18 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Niveis/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/Arquitetura.tres" type="TileSet" id=2]
 [ext_resource path="res://Mecanicas/Porta.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mecanicas/Luz.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Mecanicas/Espada.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Mecanicas/PocaoHP.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Mecanicas/Loot/PocaoHP.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Personagens/Sentinela.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Mecanicas/Ouro.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Mecanicas/Loot/Ouro.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Mecanicas/Espinhos.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Mecanicas/Chave.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Mecanicas/PortaFechada.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Personagens/Marujo.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Mecanicas/Bau.tscn" type="PackedScene" id=13]
 
 [node name="Sandbox" instance=ExtResource( 1 )]
 
@@ -51,9 +53,19 @@ position = Vector2( 407, 250 )
 [node name="Ouro4" parent="Coletaveis/Dinheiro" index="3" instance=ExtResource( 8 )]
 position = Vector2( 81, 297 )
 
-[node name="Chave" parent="Coletaveis" index="3" instance=ExtResource( 10 )]
-position = Vector2( -92, -77 )
+[node name="Baus" type="Node" parent="Coletaveis" index="3"]
+
+[node name="Bau" parent="Coletaveis/Baus" index="0" instance=ExtResource( 13 )]
+position = Vector2( -120, 22 )
+
+[node name="Chave" parent="Coletaveis/Baus/Bau/Tesouro" index="0" instance=ExtResource( 10 )]
+visible = false
+position = Vector2( -121, 22 )
 atributo = 10
+
+[node name="Bau2" parent="Coletaveis/Baus" index="1" instance=ExtResource( 13 )]
+position = Vector2( -45, -79 )
+random = true
 
 [node name="Porta" parent="Portas" index="0" instance=ExtResource( 3 )]
 position = Vector2( -36, 155 )
@@ -77,6 +89,9 @@ frente_inicial = "_esquerda"
 [node name="Position2D" type="Position2D" parent="Inimigos/Sentinela/Locais" index="0"]
 position = Vector2( 342, -88 )
 
+[node name="Marujo" parent="Inimigos" index="1" instance=ExtResource( 12 )]
+position = Vector2( 170, 260 )
+
 [node name="Espinhos" parent="Armadilhas" index="0" instance=ExtResource( 9 )]
 position = Vector2( -6, 107 )
 
@@ -86,6 +101,7 @@ position = Vector2( -6, 107 )
 position = Vector2( -60, 29 )
 z_index = 1
 
+[editable path="Coletaveis/Baus/Bau"]
 [editable path="Portas/Porta"]
 [editable path="Portas/Porta2"]
 [editable path="Inimigos/Sentinela"]

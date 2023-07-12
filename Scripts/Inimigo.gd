@@ -47,7 +47,7 @@ func pos_ataque():
 	$Timer.start(1)
 
 func gerar_loot():
-	var ouro = preload("res://Mecanicas/Ouro.tscn")
+	var ouro = preload("res://Mecanicas/Loot/Ouro.tscn")
 	var loot = ouro.instance()
 	var objetos = get_node("/root").find_node("Coletaveis", true, false)
 	loot.position = position

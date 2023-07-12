@@ -53,3 +53,6 @@ func _on_Ouro_body_entered(body):
 
 func _on_AudioStreamPlayer_finished():
 	queue_free()
+
+func adicionar_loot(body):
+	emit_signal("body_entered", body)
