@@ -64,3 +64,7 @@ func imprimir_texto(texto):
 		animacao.tween_property($Control/Dialogo/NinePatchRect/Texto, "visible_characters", i, 0.03)
 	
 	animacao.tween_property($Control/Dialogo/NinePatchRect/Continuar, "visible", true, 0.01)
+
+func pausar_jogo():
+	get_tree().call_group("Mobile", "congelar")
+	$Control/Pause/Popup.popup()

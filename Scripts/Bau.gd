@@ -3,8 +3,8 @@ extends StaticBody2D
 export var random : bool
 
 var can_open = false
-var first_open = true
-var loots = {}
+export var first_open = true
+export var loots = {}
 var jogador
 
 func _ready():

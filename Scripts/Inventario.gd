@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+#onready var HUD = get_node("/root").find_node("HUD", true, false)
 onready var jogador = get_node("/root").find_node("Jogador", true, false)
 
 func _input(event):

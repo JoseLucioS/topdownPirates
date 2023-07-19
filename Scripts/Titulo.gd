@@ -14,7 +14,7 @@ func _on_Sair_pressed():
 
 
 func _on_Carregar_pressed():
-	pass # Replace with function body.
+	SaveGame.carregar_jogo()
 
 
 func _on_Config_pressed():

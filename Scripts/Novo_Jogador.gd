@@ -1,10 +1,10 @@
 extends "res://Scripts/Personagem.gd"
 
 export var HP_Max : int
-var arma = false
-var pocao = 0
-var ouro = 0
-var inventario = []
+export var arma = false
+export var pocao = 0
+export var ouro = 0
+export var inventario = []
 
 func _ready():
 	velocidade = vel_normal
@@ -31,6 +31,10 @@ func _input(event):
 			if i.nome == "pocaoHP":
 				inventario.erase(i)
 				break
+	
+	elif Input.is_action_just_pressed("pausar"):
+		var hud = get_tree().get_root().find_node("HUD", true, false)
+		hud.pausar_jogo()
 
 
 func definir_movimento():

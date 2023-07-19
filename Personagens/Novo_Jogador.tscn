@@ -942,6 +942,10 @@ dano = 5
 vel_normal = 120
 vel_corrida = 140
 HP_Max = 20
+arma = false
+pocao = 0
+ouro = 0
+inventario = [  ]
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 33 )
