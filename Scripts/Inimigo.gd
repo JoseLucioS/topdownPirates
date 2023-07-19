@@ -1,10 +1,14 @@
 extends "res://Scripts/Personagem.gd"
 
+signal remover_marcador
+
 #Estado do comportamento
 # 0 - patrulha
 # 1 - perseguição
 var status
 onready var player = get_node("/root").find_node("Jogador", true, false)
+
+var marcador_mapa = "inimigo"
 
 #variaveis para movimento
 var destino
@@ -52,6 +56,7 @@ func gerar_loot():
 	var objetos = get_node("/root").find_node("Coletaveis", true, false)
 	loot.position = position
 	objetos.add_child(loot)
+	emit_signal("remover_marcador", self)
 
 func congelar():
 	set_physics_process(false)
