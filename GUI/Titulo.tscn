@@ -92,9 +92,9 @@ anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 312.0
-margin_top = 217.0
+margin_top = 184.0
 margin_right = 712.0
-margin_bottom = 383.0
+margin_bottom = 416.0
 rect_min_size = Vector2( 400, 0 )
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
@@ -109,13 +109,13 @@ percent_visible = -0.0714286
 [node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
 margin_top = 104.0
 margin_right = 400.0
-margin_bottom = 166.0
+margin_bottom = 232.0
 rect_min_size = Vector2( 200, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
 margin_left = 100.0
 margin_right = 300.0
-margin_bottom = 62.0
+margin_bottom = 128.0
 rect_min_size = Vector2( 200, 62 )
 
 [node name="Iniciar" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
@@ -123,10 +123,22 @@ margin_right = 200.0
 margin_bottom = 29.0
 text = "Iniciar"
 
-[node name="Sair" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+[node name="Carregar" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
 margin_top = 33.0
 margin_right = 200.0
 margin_bottom = 62.0
+text = "Carregar"
+
+[node name="Config" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 200.0
+margin_bottom = 95.0
+text = "Configuracoes"
+
+[node name="Sair" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 99.0
+margin_right = 200.0
+margin_bottom = 128.0
 text = "Sair"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -138,4 +150,6 @@ stream = ExtResource( 4 )
 volume_db = 8.0
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/Iniciar" to="." method="_on_Iniciar_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/Carregar" to="." method="_on_Carregar_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/Config" to="." method="_on_Config_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/Sair" to="." method="_on_Sair_pressed"]

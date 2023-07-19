@@ -14,6 +14,10 @@ config/name="TopDown Pirates"
 run/main_scene="res://GUI/Titulo.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Config="*res://Scripts/Config.gd"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

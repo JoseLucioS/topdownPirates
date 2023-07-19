@@ -3,6 +3,9 @@ extends Area2D
 export var dano : int
 var jogador
 
+func _ready():
+	$AudioStreamPlayer.volume_db = Config.pegar_volume("SFX")
+
 func _on_Espinhos_body_entered(body):
 	if body.collision_layer == 1:
 		$AnimationPlayer.play("ativar")

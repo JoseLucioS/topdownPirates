@@ -38,6 +38,7 @@ var ouro = [
 ]
 
 func _ready():
+	$AudioStreamPlayer.volume_db = Config.pegar_volume("SFX")
 	randomize()
 	var escolha = ouro[randi() % ouro.size()]
 	valor = escolha.valor

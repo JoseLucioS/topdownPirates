@@ -10,6 +10,9 @@ export var vel_corrida : int
 var direcao = Vector2(0, 0)
 var frente
 
+func _ready():
+	$AudioStreamPlayer.volume_db = Config.pegar_volume("SFX")
+
 func _physics_process(delta):
 	definir_movimento()
 	definir_animacao()

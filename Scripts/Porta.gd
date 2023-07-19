@@ -2,6 +2,9 @@ extends Node2D
 
 var pode_usar = false
 
+func _ready():
+	$AudioStreamPlayer.volume_db = Config.pegar_volume("SFX")
+
 func _on_Area2D_body_entered(body):
 	if body.collision_layer == 1:
 		pode_usar = true

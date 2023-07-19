@@ -8,6 +8,7 @@ var loots = {}
 var jogador
 
 func _ready():
+	$AudioStreamPlayer.volume_db = Config.pegar_volume("SFX")
 	if random:
 		carregar_loots()
 		randomize()
