@@ -904,6 +904,9 @@ position = Vector2( 2202, 836 )
 position = Vector2( 306.5, 498.5 )
 scale = Vector2( 13.4531, 14.0469 )
 
+[node name="Minimapa" parent="HUD/Control" index="4"]
+zoom = 1.5
+
 [node name="Tema" parent="Sons" index="0"]
 stream = ExtResource( 7 )
 volume_db = 6.0
@@ -941,4 +944,5 @@ z_index = 1
 [editable path="Inimigos/Sentinela"]
 [editable path="Inimigos/Sentinela2"]
 [editable path="Inimigos/Sentinela3"]
+[editable path="HUD"]
 [editable path="Jogador"]
