@@ -1,7 +1,7 @@
 extends Node2D
 
-var texto_tutorial = "Movimento: A, W, S, D. Atacar: Espaço. Pausar o jogo: P. Usar pocao: Q. Interagir com as portas e Baus: E. Abrir inventario: I."
-var evento1 = true
+var texto_tutorial = "Movimento: A, W, S, D. Atacar: Espaco. Pausar o jogo: P. Usar pocao: Q. Interagir com as portas e Baus: E. Abrir inventario: I."
+export var evento1 = true
 
 func _ready():
 	$Sons/Tema.volume_db = Config.pegar_volume("Musica")
