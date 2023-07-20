@@ -1,10 +1,16 @@
 extends Node2D
 
+var texto_tutorial = "Movimento: A, W, S, D. Atacar: Espaço. Pausar o jogo: P. Usar pocao: Q. Interagir com as portas e Baus: E. Abrir inventario: I."
+var evento1 = true
+
 func _ready():
 	$Sons/Tema.volume_db = Config.pegar_volume("Musica")
 	$Sons/AudioStreamPlayer2D.volume_db = Config.pegar_volume("SFX")
 	$Sons/AudioStreamPlayer2D4.volume_db = Config.pegar_volume("SFX")
 	$Sons/AudioStreamPlayer2D5.volume_db = Config.pegar_volume("SFX")
+	if evento1:
+		$HUD.emit_signal("abrir_dialogo", texto_tutorial)
+		evento1 = false
 
 func _on_Area2D_body_entered(body):
 	if body.collision_layer == 1:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Niveis/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Tiles/Arquitetura.tres" type="TileSet" id=2]
@@ -11,6 +11,11 @@
 [ext_resource path="res://Assets/SFX/Sea sounds - VistulaShort.mp3" type="AudioStream" id=9]
 [ext_resource path="res://Mecanicas/Loot/PocaoHP.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scripts/Fase01.gd" type="Script" id=11]
+[ext_resource path="res://Personagens/Sentinela.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Mecanicas/Bau.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Mecanicas/Chave.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Mecanicas/PortaFechada.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Mecanicas/Espinhos.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.5, 10 )
@@ -61,6 +66,15 @@ position = Vector2( 729, 358 )
 
 [node name="Espada" parent="Coletaveis" index="1" instance=ExtResource( 6 )]
 position = Vector2( 321, 630 )
+
+[node name="Bau" parent="Coletaveis" index="2" instance=ExtResource( 13 )]
+position = Vector2( 2598, 821 )
+
+[node name="Chave" parent="Coletaveis/Bau/Tesouro" index="0" instance=ExtResource( 14 )]
+visible = false
+position = Vector2( 2597, 820 )
+atributo = 10
+valor = 10
 
 [node name="Porta" parent="Portas" index="0" instance=ExtResource( 5 )]
 position = Vector2( 309, 155 )
@@ -118,13 +132,14 @@ rotation = 3.14159
 position = Vector2( 27.8267, 182.122 )
 scale = Vector2( 10.3575, 8.3122 )
 
-[node name="Porta8" parent="Portas" index="7" instance=ExtResource( 5 )]
-position = Vector2( 1976, -250 )
+[node name="PortaFechada" parent="Portas" index="7" instance=ExtResource( 15 )]
+position = Vector2( 1975, -250 )
 rotation = 4.71239
+id = 10
 
-[node name="Luz" parent="Portas/Porta8" index="1"]
-position = Vector2( 54.8079, 626.649 )
-scale = Vector2( 19.788, 21.3257 )
+[node name="Luz" parent="Portas/PortaFechada" index="1"]
+position = Vector2( 808.5, 52.5 )
+scale = Vector2( 32.1094, 23.1719 )
 
 [node name="Marujo" parent="Inimigos" index="0" instance=ExtResource( 8 )]
 position = Vector2( 499, -82 )
@@ -192,31 +207,7 @@ position = Vector2( 1031, -473 )
 [node name="Position2D2" type="Position2D" parent="Inimigos/Marujo6/Locais" index="1"]
 position = Vector2( 1035, -64 )
 
-[node name="Marujo7" parent="Inimigos" index="6" instance=ExtResource( 8 )]
-position = Vector2( 1753, -324 )
-
-[node name="Position2D" type="Position2D" parent="Inimigos/Marujo7/Locais" index="0"]
-position = Vector2( 1609, -388 )
-
-[node name="Position2D2" type="Position2D" parent="Inimigos/Marujo7/Locais" index="1"]
-position = Vector2( 1904, -204 )
-
-[node name="Marujo8" parent="Inimigos" index="7" instance=ExtResource( 8 )]
-position = Vector2( 2398, 620 )
-
-[node name="Position2D" type="Position2D" parent="Inimigos/Marujo8/Locais" index="0"]
-position = Vector2( 2201, 529 )
-
-[node name="Position2D2" type="Position2D" parent="Inimigos/Marujo8/Locais" index="1"]
-position = Vector2( 2568, 525 )
-
-[node name="Position2D3" type="Position2D" parent="Inimigos/Marujo8/Locais" index="2"]
-position = Vector2( 2568, 800 )
-
-[node name="Position2D4" type="Position2D" parent="Inimigos/Marujo8/Locais" index="3"]
-position = Vector2( 2214, 804 )
-
-[node name="Marujo9" parent="Inimigos" index="8" instance=ExtResource( 8 )]
+[node name="Marujo9" parent="Inimigos" index="6" instance=ExtResource( 8 )]
 position = Vector2( 1821, 267 )
 
 [node name="Position2D" type="Position2D" parent="Inimigos/Marujo9/Locais" index="0"]
@@ -225,7 +216,7 @@ position = Vector2( 1746, 158 )
 [node name="Position2D2" type="Position2D" parent="Inimigos/Marujo9/Locais" index="1"]
 position = Vector2( 1822, 429 )
 
-[node name="Marujo10" parent="Inimigos" index="9" instance=ExtResource( 8 )]
+[node name="Marujo10" parent="Inimigos" index="7" instance=ExtResource( 8 )]
 position = Vector2( 2380, -335 )
 
 [node name="Position2D" type="Position2D" parent="Inimigos/Marujo10/Locais" index="0"]
@@ -237,7 +228,7 @@ position = Vector2( 2184, -291 )
 [node name="Position2D3" type="Position2D" parent="Inimigos/Marujo10/Locais" index="2"]
 position = Vector2( 2499, -248 )
 
-[node name="Marujo11" parent="Inimigos" index="10" instance=ExtResource( 8 )]
+[node name="Marujo11" parent="Inimigos" index="8" instance=ExtResource( 8 )]
 position = Vector2( 2544, -171 )
 
 [node name="Position2D" type="Position2D" parent="Inimigos/Marujo11/Locais" index="0"]
@@ -251,6 +242,78 @@ position = Vector2( 2689, -191 )
 
 [node name="Position2D4" type="Position2D" parent="Inimigos/Marujo11/Locais" index="3"]
 position = Vector2( 2689, -336 )
+
+[node name="Sentinela" parent="Inimigos" index="9" instance=ExtResource( 12 )]
+position = Vector2( 2536, 638 )
+
+[node name="Sentinela2" parent="Inimigos" index="10" instance=ExtResource( 12 )]
+position = Vector2( 1916, -351 )
+
+[node name="Sentinela3" parent="Inimigos" index="11" instance=ExtResource( 12 )]
+position = Vector2( 2679, -345 )
+
+[node name="Espinhos" parent="Armadilhas" index="0" instance=ExtResource( 16 )]
+position = Vector2( 1371, 196 )
+
+[node name="Espinhos2" parent="Armadilhas" index="1" instance=ExtResource( 16 )]
+position = Vector2( 1371, 221 )
+
+[node name="Espinhos3" parent="Armadilhas" index="2" instance=ExtResource( 16 )]
+position = Vector2( 1673, 325 )
+
+[node name="Espinhos4" parent="Armadilhas" index="3" instance=ExtResource( 16 )]
+position = Vector2( 1697, 325 )
+
+[node name="Espinhos5" parent="Armadilhas" index="4" instance=ExtResource( 16 )]
+position = Vector2( 1721, 325 )
+
+[node name="Espinhos6" parent="Armadilhas" index="5" instance=ExtResource( 16 )]
+position = Vector2( 2579, 879 )
+
+[node name="Espinhos7" parent="Armadilhas" index="6" instance=ExtResource( 16 )]
+position = Vector2( 2579, 902 )
+
+[node name="Espinhos8" parent="Armadilhas" index="7" instance=ExtResource( 16 )]
+position = Vector2( 2603, 879 )
+
+[node name="Espinhos9" parent="Armadilhas" index="8" instance=ExtResource( 16 )]
+position = Vector2( 2603, 902 )
+
+[node name="Espinhos10" parent="Armadilhas" index="9" instance=ExtResource( 16 )]
+position = Vector2( 2627, 879 )
+
+[node name="Espinhos11" parent="Armadilhas" index="10" instance=ExtResource( 16 )]
+position = Vector2( 2627, 902 )
+
+[node name="Espinhos12" parent="Armadilhas" index="11" instance=ExtResource( 16 )]
+position = Vector2( 2376, 758 )
+
+[node name="Espinhos13" parent="Armadilhas" index="12" instance=ExtResource( 16 )]
+position = Vector2( 2376, 781 )
+
+[node name="Espinhos14" parent="Armadilhas" index="13" instance=ExtResource( 16 )]
+position = Vector2( 2452, 639 )
+
+[node name="Espinhos15" parent="Armadilhas" index="14" instance=ExtResource( 16 )]
+position = Vector2( 2452, 662 )
+
+[node name="Espinhos16" parent="Armadilhas" index="15" instance=ExtResource( 16 )]
+position = Vector2( 2553, 717 )
+
+[node name="Espinhos17" parent="Armadilhas" index="16" instance=ExtResource( 16 )]
+position = Vector2( 2553, 740 )
+
+[node name="Espinhos18" parent="Armadilhas" index="17" instance=ExtResource( 16 )]
+position = Vector2( 2254, 607 )
+
+[node name="Espinhos19" parent="Armadilhas" index="18" instance=ExtResource( 16 )]
+position = Vector2( 2254, 630 )
+
+[node name="Espinhos20" parent="Armadilhas" index="19" instance=ExtResource( 16 )]
+position = Vector2( 2202, 813 )
+
+[node name="Espinhos21" parent="Armadilhas" index="20" instance=ExtResource( 16 )]
+position = Vector2( 2202, 836 )
 
 [node name="Luz" parent="Luzes" index="1" instance=ExtResource( 4 )]
 position = Vector2( 306.5, 498.5 )
@@ -288,11 +351,12 @@ z_index = 1
 zoom = Vector2( 0.7, 0.7 )
 
 [node name="Jogador" parent="." index="10"]
-position = Vector2( 2671, -343 )
+position = Vector2( 190, 398 )
 z_index = 1
 
 [connection signal="body_entered" from="Objetivos/Navio/Area2D" to="." method="_on_Area2D_body_entered"]
 
+[editable path="Coletaveis/Bau"]
 [editable path="Portas/Porta"]
 [editable path="Portas/Porta2"]
 [editable path="Portas/Porta3"]
@@ -300,15 +364,13 @@ z_index = 1
 [editable path="Portas/Porta5"]
 [editable path="Portas/Porta6"]
 [editable path="Portas/Porta7"]
-[editable path="Portas/Porta8"]
+[editable path="Portas/PortaFechada"]
 [editable path="Inimigos/Marujo"]
 [editable path="Inimigos/Marujo2"]
 [editable path="Inimigos/Marujo3"]
 [editable path="Inimigos/Marujo4"]
 [editable path="Inimigos/Marujo5"]
 [editable path="Inimigos/Marujo6"]
-[editable path="Inimigos/Marujo7"]
-[editable path="Inimigos/Marujo8"]
 [editable path="Inimigos/Marujo9"]
 [editable path="Inimigos/Marujo10"]
 [editable path="Inimigos/Marujo11"]

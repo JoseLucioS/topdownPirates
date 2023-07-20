@@ -8,7 +8,7 @@ export var vel_normal : int
 export var vel_corrida : int
 
 var direcao = Vector2(0, 0)
-var frente
+export var frente : String
 
 func _ready():
 	$AudioStreamPlayer.volume_db = Config.pegar_volume("SFX")

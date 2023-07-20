@@ -1,11 +1,12 @@
 extends CanvasLayer
 
-#onready var HUD = get_node("/root").find_node("HUD", true, false)
+onready var HUD = get_node("/root").find_node("HUD", true, false)
 onready var jogador = get_node("/root").find_node("Jogador", true, false)
 
 func _input(event):
 	if Input.is_action_just_pressed("inventario"):
-		preencher_dados()
+		HUD.visible = false
+		#preencher_dados() algum bug nessa funcao
 		get_tree().call_group("Mobile", "congelar")
 		$Popup.popup()
 
@@ -33,4 +34,5 @@ func limpar_imagens(item):
 
 func _on_Fechar_pressed():
 	$Popup.hide()
+	HUD.visible = true
 	get_tree().call_group("Mobile", "descongelar")

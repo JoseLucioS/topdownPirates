@@ -112,3 +112,5 @@ z_index = 1
 [editable path="Portas/Porta2"]
 [editable path="Inimigos/Sentinela"]
 [editable path="HUD"]
+[editable path="Jogador"]
+[editable path="Jogador/Inventario"]
